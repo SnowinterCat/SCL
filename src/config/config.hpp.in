@@ -1,0 +1,26 @@
+#pragma once
+#include <scl/__config/os.hpp>
+#include <scl/__config/compiler.hpp>
+#include <scl/__config/platform.hpp>
+
+#define SCL_VERSION                                                                                \
+    ((((uint32_t)(SCL_VERSION_BUILD)) << 29U) | (((uint32_t)(SCL_VERSION_MAJOR)) << 22U) |         \
+     (((uint32_t)(SCL_VERSION_MINOR)) << 12U) | ((uint32_t)(SCL_VERSION_ALTER)))
+#define SCL_VERSION_STR "${VERSION}.${VERSION_BUILD}"
+#define SCL_VERSION_MAJOR ${VERSION_MAJOR}
+#define SCL_VERSION_MINOR ${VERSION_MINOR}
+#define SCL_VERSION_ALTER ${VERSION_ALTER}
+#define SCL_VERSION_BUILD ${VERSION_BUILD}
+#define SCL_PLAT "${PLAT}"
+#define SCL_ARCH "${ARCH}"
+#define SCL_MODE "${MODE}"
+#define SCL_DEBUG ${DEBUG}
+#define SCL_OS "${OS}"
+
+${define SCL_SHARED_BUILD}
+${define SCL_LUANCH}
+
+#define SCL_BEGIN                                                                                  \
+    namespace scl                                                                                  \
+    {
+#define SCL_END }
