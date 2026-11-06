@@ -28,6 +28,7 @@ option("3rd_kind",     {showmenu = true, type = "string",  default = get_config(
 option("3rd_mode",     {showmenu = true, type = "string",  default = "release",          values = {"release", "debug"}})
 option("outputdir",    {showmenu = true, type = "string",  default = path.join(os.projectdir(), "bin")})
 option("buildversion", {showmenu = true, type = "number",  default = 0})
+option("system",       {showmenu = true, type = "boolean", default = nil})
 
 includes("lua/check")
 check_macros("has_std_out_ptr",         "__cpp_lib_out_ptr",            {languages = stdcxx(), includes = "version"})
@@ -52,9 +53,9 @@ if not has_config("has_std_runtime_format") then add_requires("fmt") end
 
 if not has_config("3rd_custom") then
 -- configurations of required libraries
-add_requireconfs("**out_ptr",       {override = true, version = "x.x.x"})
-add_requireconfs("**zeus_expected", {override = true, version = "x.x.x"})
-add_requireconfs("**fmt",           {override = true, version = "x.x.x", configs = {shared = is_config("3rd_kind", "shared"), debug = is_config("3rd_mode", "debug"), header_only = false}})
+add_requireconfs("**out_ptr",       {override = true, version = "x.x.x", system = get_config("system")})
+add_requireconfs("**zeus_expected", {override = true, version = "x.x.x", system = get_config("system")})
+add_requireconfs("**fmt",           {override = true, version = "x.x.x", system = get_config("system"), configs = {shared = is_config("3rd_kind", "shared"), debug = is_config("3rd_mode", "debug"), header_only = false}})
 -- configurations of dependency libraries
 end
 

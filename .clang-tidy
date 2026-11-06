@@ -4,7 +4,7 @@ Checks:    'bugprone-*,-bugprone-easily-swappable-parameters,
             clang-analyzer-*,
             concurrency-*,
             cppcoreguidelines-*,-cppcoreguidelines-non-private-member-variables-in-classes,-cppcoreguidelines-owning-memory,-cppcoreguidelines-macro-usage,
-            hicpp-*,-hicpp-signed-bitwise,
+            hicpp-*,
             misc-*,-misc-non-private-member-variables-in-classes,-misc-use-internal-linkage,
             modernize-*,
             performance-*,
@@ -30,11 +30,11 @@ CheckOptions:
     readability-identifier-naming.ProtectedMemberPrefix:  _
     readability-identifier-naming.PrivateMemberCase:      camelBack
     readability-identifier-naming.PrivateMemberPrefix:    _
-    ### 成员函数名: camelBack（公有）、_camelBack（保护、私有）
-    readability-identifier-naming.PublicMethodCase:       camelBack
-    readability-identifier-naming.ProtectedMethodCase:    camelBack
+    ### 成员函数名: snake_case（公有）、_snake_case（保护、私有）
+    readability-identifier-naming.PublicMethodCase:       snake_case
+    readability-identifier-naming.ProtectedMethodCase:    snake_case
     readability-identifier-naming.ProtectedMethodPrefix:  _
-    readability-identifier-naming.PrivateMethodCase:      camelBack
+    readability-identifier-naming.PrivateMethodCase:      snake_case
     readability-identifier-naming.PrivateMethodPrefix:    _
     ##  枚举名: CamelCase
     readability-identifier-naming.EnumCase: CamelCase
@@ -42,7 +42,7 @@ CheckOptions:
     readability-identifier-naming.EnumConstantCase:   CamelCase
     readability-identifier-naming.EnumConstantPrefix: e
     ##  函数
-    readability-identifier-naming.FunctionCase: camelBack
+    readability-identifier-naming.FunctionCase: snake_case
     ###  函数参数
     readability-identifier-naming.ParameterCase:  camelBack
     ##  变量
@@ -56,7 +56,7 @@ CheckOptions:
     ### 静态变量: kCamelCase
     readability-identifier-naming.StaticVariableCase:   CamelCase
     readability-identifier-naming.StaticVariablePrefix: k
-    ### 编译期变量: cCamelCase
+    ### 编译期变量: CamelCase
     readability-identifier-naming.ConstexprVariableCase:    CamelCase
     readability-identifier-naming.ConstexprVariablePrefix:  ''
 

@@ -18,6 +18,9 @@ using std::format;
 using std::format_to;
 using std::format_to_n;
 using std::formatted_size;
+using std::print;
+using std::println;
+using std::runtime;
 using std::vformat;
 using std::vformat_to;
 // 格式化器
@@ -43,6 +46,9 @@ using fmt::format;
 using fmt::format_to;
 using fmt::format_to_n;
 using fmt::formatted_size;
+using fmt::print;
+using fmt::println;
+using fmt::runtime;
 using fmt::vformat;
 using fmt::vformat_to;
 // 格式化器
